@@ -13,7 +13,7 @@ namespace CodeNameLogic
             CardRoles = new CardRole[rows, colummns];
         }
 
-        // return card role as reference via row & column
+        // return card role by reference
         public ref CardRole SetCardRole(uint row, uint column)
         { 
             return ref CardRoles[row, column];
