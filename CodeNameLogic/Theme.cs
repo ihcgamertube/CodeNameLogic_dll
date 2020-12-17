@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace CodeNameLogic
 {
-    class Theme
+    public class Theme
     {
         public Color ThemeColor { get; set; }
 
