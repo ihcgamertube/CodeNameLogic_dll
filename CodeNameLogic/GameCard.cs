@@ -8,7 +8,7 @@ namespace CodeNameLogic
     {
         public bool IsActive { get; set; }
 
-        public GameCard(uint id = 0, string word = "") : 
+        public GameCard(uint id, string word) : 
             base(id, word)
         {
 

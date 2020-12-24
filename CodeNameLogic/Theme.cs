@@ -7,10 +7,14 @@ namespace CodeNameLogic
 {
     public class Theme
     {
+        public string ThemeDecorationResPath { get; set; }
+
         public Color ThemeColor { get; set; }
 
-        public string ThemeDecorationImage { get; set; }
-
-        Theme(Color color) => (ThemeColor) = (color);
+        Theme(string themeRes, Color color)
+        {
+            ThemeDecorationResPath = themeRes;
+            ThemeColor = color;
+        }
     }
 }

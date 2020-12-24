@@ -9,6 +9,6 @@ namespace CodeNameLogic
         BlueTeam        = 'b',
         RedTeam         = 'r',
         StrikeCard      = 's',
-        Bystander       = 'b'
+        Observer        = 'o'
     };
 }

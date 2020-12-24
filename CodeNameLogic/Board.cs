@@ -6,8 +6,9 @@ namespace CodeNameLogic
 {
     public class Board
     {
-        public delegate BoardDescriptor GetBoardDescriptorDelegate();
-
+        const uint MAX_ROWS    = 10;
+        const uint MAX_COLUMNS = 10;
+        
         public GameCard[,] GameCards { get; set; }
 
         public BoardDescriptor BoardCardsDescriptor { get; set; }
@@ -16,6 +17,15 @@ namespace CodeNameLogic
 
         public Board(uint rows, uint columns)
         {
+            if (rows >= MAX_ROWS || columns >= MAX_COLUMNS)
+            {
+                throw new Exception("Rows or Columns limit exceeded");
+            }
+            else if (rows <= 0 || columns <= 0)
+            {
+                throw new Exception("Rows or Columns must be a postive integer");
+            }
+
             GameCards = new GameCard[rows, columns];
             BoardCardsDescriptor = new BoardDescriptor(rows, columns);
             BoardTheme = new GameTheme();

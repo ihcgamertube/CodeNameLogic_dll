@@ -8,6 +8,10 @@ namespace CodeNameLogic
 
         public string Word { get; set; }
 
-        public Card(uint id = 0, string word = "") => (Id, Word) = (id, word);
+        public Card(uint id, string word)
+        {
+            Id = id;
+            Word = word;
+        }
     }
 }

@@ -8,16 +8,14 @@ namespace CodeNameLogic
     {
         public CardRole[,] CardRoles { get; set; }
 
-        public BoardDescriptor(uint rows, uint colummns)
+        public BoardDescriptor(uint rows, uint columns)
         {
-            CardRoles = new CardRole[rows, colummns];
-        }
+            if (rows <= 0 || columns <= 0)
+            {
+                throw new Exception("Rows or Columns must be a postive integer");
+            }
 
-        // return card role by reference
-        public ref CardRole SetCardRole(uint row, uint column)
-        { 
-            return ref CardRoles[row, column];
+            CardRoles = new CardRole[rows, columns];
         }
-
     }
 }
