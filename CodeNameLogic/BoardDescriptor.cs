@@ -6,16 +6,28 @@ namespace CodeNameLogic
 {
     public class BoardDescriptor
     {
-        public CardRole[,] CardRoles { get; set; }
+        public CardRole[,] CardRoles { get; private set; }
 
-        public BoardDescriptor(uint rows, uint columns)
+        public BoardDescriptor(CardRole[,] cardRoles)
         {
-            if (rows <= 0 || columns <= 0)
-            {
-                throw new Exception("Rows or Columns must be a postive integer");
-            }
+            CardRoles = cardRoles;
+        }
 
-            CardRoles = new CardRole[rows, columns];
+        public CardRole this[int row, int col]
+        {
+            get 
+            {
+                if (row >= CardRoles.GetLength(0) || col >= CardRoles.GetLength(1))
+                {
+                    throw new ArgumentOutOfRangeException("Rows or Columns limit exceeded");
+                }
+                else if (row <= 0 || col <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("Rows or Columns must be a postive integer");
+                }
+
+                return CardRoles[row, col]; 
+            }
         }
     }
 }

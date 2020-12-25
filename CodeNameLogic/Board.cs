@@ -15,19 +15,22 @@ namespace CodeNameLogic
 
         public GameTheme BoardTheme { get; set; }
 
-        public Board(uint rows, uint columns)
+        public Board(BoardDescriptor boardDescriptor)
         {
+            int rows    = boardDescriptor.CardRoles.GetLength(0);
+            int columns = boardDescriptor.CardRoles.GetLength(1);
+
             if (rows >= MAX_ROWS || columns >= MAX_COLUMNS)
             {
-                throw new Exception("Rows or Columns limit exceeded");
+                throw new ArgumentOutOfRangeException("Rows or Columns limit exceeded");
             }
             else if (rows <= 0 || columns <= 0)
             {
-                throw new Exception("Rows or Columns must be a postive integer");
+                throw new ArgumentOutOfRangeException("Rows or Columns must be a postive integer");
             }
 
+            BoardCardsDescriptor = boardDescriptor;
             GameCards = new GameCard[rows, columns];
-            BoardCardsDescriptor = new BoardDescriptor(rows, columns);
             BoardTheme = new GameTheme();
         }
     }
