@@ -9,11 +9,13 @@ namespace CodeNameLogic.TeamModels
     {
         public uint Id { get; private set; }
 
+        public TeamOptions TeamOption { get; private set; }
+
         public SpyMasterPlayer SpyMaster { get; private set; }
 
         public FieldOperativePlayer FieldOperative { get; private set; }
         
-        public Team(uint id, SpyMasterPlayer spyMaster, FieldOperativePlayer fieldOperative)
+        public Team(uint id, TeamOptions teamOption, SpyMasterPlayer spyMaster, FieldOperativePlayer fieldOperative)
         {
             if (spyMaster == null || fieldOperative == null)
             {
@@ -21,6 +23,7 @@ namespace CodeNameLogic.TeamModels
             }
 
             Id = id;
+            TeamOption = TeamOption;
             SpyMaster = spyMaster;
             FieldOperative = fieldOperative;
         }
