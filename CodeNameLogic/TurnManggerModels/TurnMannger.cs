@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodeNameLogic.TurnMangger
+namespace CodeNameLogic.TurnManggerModels
 {
     public class TurnMannger
     {
@@ -11,24 +11,29 @@ namespace CodeNameLogic.TurnMangger
 
         protected uint _teamTurnsCounter;
 
-        protected Team CurrentTeam { get; private set; }
+        protected uint _totalTurns;
+
+        protected TeamOptions CurrentTeam { get; private set; }
         
         // Note: Teams must be sorted by turns
-        public TurnMannger(Team[] teams, Team startingTeam)
+        public TurnMannger(Team[] teams, TeamOptions startingTeam)
         {
-            if (teams == null || startingTeam == null)
+            if (teams == null)
             {
-                throw new ArgumentNullException("Teams or Starting team can not be null");
+                throw new ArgumentNullException("Teams can not be null");
             }
 
             _teams = teams;
             CurrentTeam = startingTeam;
 
             _teamTurnsCounter = 0;
+            _totalTurns = 0;
         }
 
         public Team NextTurn()
         {
+            _totalTurns++;
+
             if (++_teamTurnsCounter == _teams.Length)
             {
                 _teamTurnsCounter = 0;

@@ -6,7 +6,7 @@ namespace CodeNameLogic.TeamModels
 {
     public enum TeamOptions
     {
-        RedTeam  = 0,
-        BlueTeam = 1
+        RedTeam  = 'r',
+        BlueTeam = 'b'
     }
 }
