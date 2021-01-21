@@ -27,7 +27,7 @@ namespace CodeNameLogic
             _board = board;
             _team = team;
 
-            _scoreTracker = new ScoreTracker(team);
+            _scoreTracker = new ScoreTracker(team, board.BoardCardsDescriptor);
             _scoreTracker._teamWonDelgate  += GameEventsModels.EventTeamWon;
             _scoreTracker._teamLostDelgate += GameEventsModels.EventTeamLost;
         }
