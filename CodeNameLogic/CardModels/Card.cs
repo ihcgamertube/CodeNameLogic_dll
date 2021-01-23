@@ -10,6 +10,9 @@ namespace CodeNameLogic.CardModels
 
         public Card(uint id, string word)
         {
+            if (String.IsNullOrEmpty(word))
+                throw new ArgumentException("Word must not be empty");
+
             Id = id;
             Word = word;
         }

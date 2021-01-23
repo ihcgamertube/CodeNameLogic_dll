@@ -23,5 +23,11 @@ namespace CodeNameLogic.TeamModels.PlayerModel
             Username = username;
             RankLevel = rank;
         }
+
+        public override bool Equals(Object obj)
+        {
+            Player player = (Player)obj;
+            return Id == player.Id && Username == player.Username;
+        }
     }
 }
