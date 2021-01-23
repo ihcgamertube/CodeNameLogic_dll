@@ -14,7 +14,6 @@ namespace CodeNameLogic.TeamModels.PlayerModel
 
         public Player(uint id, string username, uint rank)
         {
-
             if (String.IsNullOrEmpty(username))
             {
                 throw new ArgumentException("Username must not be empty");

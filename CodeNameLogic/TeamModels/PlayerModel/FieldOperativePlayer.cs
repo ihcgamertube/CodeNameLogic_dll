@@ -7,9 +7,6 @@ namespace CodeNameLogic.TeamModels.PlayerModel
     public class FieldOperativePlayer : Player
     {
         public FieldOperativePlayer(uint id, string username, uint rank) :
-            base(id, username, rank)
-        { 
-            
-        }
+            base(id, username, rank) {}
     }
 }

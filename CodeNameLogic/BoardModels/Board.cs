@@ -10,9 +10,9 @@ namespace CodeNameLogic.BoardModels
         const uint MAX_ROWS    = 10;
         const uint MAX_COLUMNS = 10;
         
-        public GameCard[,] GameCards { get; set; }
+        public GameCard[,] GameCards { get; private set; }
 
-        public BoardDescriptor BoardCardsDescriptor { get; set; }
+        public BoardDescriptor BoardCardsDescriptor { get; private set; }
 
         public GameTheme BoardTheme { get; set; }
 
