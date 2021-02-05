@@ -11,5 +11,12 @@ namespace CodeNameLogic.GameModels
 
         public Theme BoardTheme { get; set; }
 
+        public GameTheme() { }
+        public GameTheme(Theme cardTheme, Theme boardTheme)
+        {
+            CardTheme = cardTheme;
+            BoardTheme = boardTheme;
+        }
+
     }
 }

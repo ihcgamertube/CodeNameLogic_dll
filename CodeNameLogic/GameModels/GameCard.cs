@@ -10,9 +10,6 @@ namespace CodeNameLogic.GameModels
         public bool IsActive { get; set; }
 
         public GameCard(uint id, string word) : 
-            base(id, word)
-        {
-
-        }
+            base(id, word) { }
     }
 }

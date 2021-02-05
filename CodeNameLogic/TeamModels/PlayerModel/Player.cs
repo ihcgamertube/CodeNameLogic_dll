@@ -14,7 +14,6 @@ namespace CodeNameLogic.TeamModels.PlayerModel
 
         public Player(uint id, string username, uint rank)
         {
-
             if (String.IsNullOrEmpty(username))
             {
                 throw new ArgumentException("Username must not be empty");
@@ -23,6 +22,12 @@ namespace CodeNameLogic.TeamModels.PlayerModel
             Id = id;
             Username = username;
             RankLevel = rank;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            Player player = (Player)obj;
+            return Id == player.Id && Username == player.Username;
         }
     }
 }

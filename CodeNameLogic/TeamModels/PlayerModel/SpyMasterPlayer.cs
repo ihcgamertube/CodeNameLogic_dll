@@ -7,9 +7,6 @@ namespace CodeNameLogic.TeamModels.PlayerModel
     public class SpyMasterPlayer : Player
     {
         public SpyMasterPlayer(uint id, string username, uint rank) : 
-            base(id, username, rank)
-        {
-
-        }
+            base(id, username, rank) {}
     }
 }

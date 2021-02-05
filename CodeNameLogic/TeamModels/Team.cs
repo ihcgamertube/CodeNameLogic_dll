@@ -18,12 +18,13 @@ namespace CodeNameLogic.TeamModels
         public Team(uint id, TeamOptions teamOption, SpyMasterPlayer spyMaster, FieldOperativePlayer fieldOperative)
         {
             if (spyMaster == null || fieldOperative == null)
-            {
                 throw new ArgumentNullException("One or more of the players are null");
-            }
+
+            if (spyMaster.Equals(fieldOperative))
+                throw new ArgumentException("Team Players have matching id and names");
 
             Id = id;
-            TeamOption = TeamOption;
+            TeamOption = teamOption;
             SpyMaster = spyMaster;
             FieldOperative = fieldOperative;
         }
